@@ -1454,13 +1454,13 @@ void MicroViewWidget::setValue(int16_t val) {
 	The current value of the widget is set to the variable passed in. The widget is drawn with the new value if the doDraw argument is true.
 */
 void MicroViewWidget::setValue(int16_t val, boolean doDraw) {
-	if ((val<=maxValue) && (val>=minValue)) {
-		value = val;
-		valLen = getInt16PrintLen(val);
-		if (doDraw) {
-			this->draw();
-		}
-	}
+	//if ((val<=maxValue) && (val>=minValue)) { //Phil
+	//	value = val;
+	//	valLen = getInt16PrintLen(val);
+	//	if (doDraw) {
+	//		this->draw();
+	//	}
+	//}
 }
 
 /** \brief Get the print length of the value.
@@ -1474,9 +1474,9 @@ uint8_t MicroViewWidget::getValLen() { return valLen; }
 	Redraws the widget.
 */
 void MicroViewWidget::reDraw() {
-	this->drawFace();
-	this->drawPointer(); // initial pointer (will be erased)
-	this->draw();
+	//this->drawFace();  //Phil
+	//this->drawPointer(); // initial pointer (will be erased)
+	//this->draw();
 }
 
 /** \brief Draw a signed decimal numeric value at the current cursor location.
@@ -1485,10 +1485,10 @@ void MicroViewWidget::reDraw() {
 */
 void MicroViewWidget::drawNumValue(int16_t value) {
 
-	for (uint8_t i = maxValLen - getInt16PrintLen(value); i > 0; i--) {
-		uView.print(" ");
-	}
-	uView.print(value);
+	//for (uint8_t i = maxValLen - getInt16PrintLen(value); i > 0; i--) { //Phil
+	//	uView.print(" ");
+	//}
+	//uView.print(value);
 }
 
 /*	Set the maximum number of characters that would be printed
